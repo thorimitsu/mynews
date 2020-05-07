@@ -9,13 +9,18 @@ use App\Profile;
 
 class ProfileController extends Controller
 {
-        public function add()
+    public function index()
+    {
+    //15
+    }
+    
+    public function add()
     {
         return view('admin.profile.create');
     }
 
-    public function create(Request $request)
-    {
+    public function create(Request $request){
+        
       $this->validate($request, Profile::$rules);
       
       $profile = new Profile;
