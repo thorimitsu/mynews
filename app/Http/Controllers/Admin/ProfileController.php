@@ -9,11 +9,7 @@ use App\Profile;
 
 class ProfileController extends Controller
 {
-    public function index()
-    {
-    //15
-    }
-    
+
     public function add()
     {
         return view('admin.profile.create');
@@ -28,15 +24,20 @@ class ProfileController extends Controller
       
       unset($form['_token']);
 
-      $profile->fill($form);
-      $profile->save();
+      $profile->fill($form)->save();
+      
       
       return redirect('admin/profile/create');
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        return view('admin.profile.edit');
+
+      $profile = Profile::find($request->id);
+      if(empty($profile)){
+        abort(404);
+      }
+      return view('admin.profile.edit',['profile_form'=>$profile]);
     }
 
     public function update()
