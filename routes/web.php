@@ -31,6 +31,8 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function() {
     Route::get('profile','Admin\ProfileController@index');
 });
 
+Route::get('/', 'NewsController@index');
+
 // 課題3
 //Route::get('XXX','AAAController@bbb');
 
