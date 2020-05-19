@@ -19,7 +19,7 @@ class ProfileController extends Controller
 
     public function index (Request $request){
 
-      $posts = Profile::find($request->id);
+      $posts = Profile::all();
       if(empty($posts)){
         abort(404);
       }
