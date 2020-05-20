@@ -26,6 +26,7 @@
                 </div>
             </div>
         @endif
+        <p>デプロイ確認</p>
         <hr color="#c0c0c0">
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
